@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview_weight"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/cardmargin">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+
+            <View
+                android:id="@+id/view_weightcard0"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/cardheader"
+                app:layout_constraintBottom_toTopOf="@+id/view1_card_weight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_caption_weightcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Weights"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view1_card_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/backgroundcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_caption_weightcard" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="@dimen/cardpadding"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1_card_weight">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_operating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Ops. (Kg.)"
+                    android:textColorHint="@color/colorAccentacikmavi"
+
+                    app:hintEnabled="true"
+
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1_card_start">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/operatingtext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:inputType="number"
+                        android:maxLength="5"
+
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout3"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Load (Kg.)"
+                    android:textColorHint="@color/colorAccentacikmavi"
+                    app:layout_constraintStart_toEndOf="@+id/textInputLayout_fuel"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayout_operating">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/loadtext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:inputType="number"
+                        android:maxLength="5"
+
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Fuel (Lt.)"
+                    android:textColorHint="@color/colorAccentacikmavi"
+                    app:layout_constraintStart_toEndOf="@+id/textInputLayout_operating"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayout_operating">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fueltext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:inputType="number"
+                        android:maxLength="5"
+
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:text="2400"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout4"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:hint="Crew (Kg.)"
+                    android:textColorHint="@color/colorAccentacikmavi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayout_operating">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/crewtext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:inputType="number"
+                        android:maxLength="5"
+
+                        android:selectAllOnFocus="false"
+                        android:singleLine="true"
+                        android:text="400"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <Switch
+                android:id="@+id/SwitchDust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Dust Protection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:checked="true" />
+
+            <Switch
+                android:id="@+id/SwitchHoist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="Hoist"
+                app:layout_constraintEnd_toEndOf="@+id/SwitchArmour"
+                app:layout_constraintStart_toStartOf="@+id/SwitchArmour"
+                app:layout_constraintTop_toBottomOf="@+id/SwitchArmour" />
+
+            <Switch
+                android:id="@+id/SwitchArmour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Armour"
+                app:layout_constraintStart_toEndOf="@+id/SwitchDust"
+                app:layout_constraintTop_toTopOf="@+id/SwitchDust"
+                tools:checked="true" />
+
+            <Switch
+                android:id="@+id/SwitchTank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="Int. Tank"
+                app:layout_constraintEnd_toEndOf="@+id/SwitchDust"
+                app:layout_constraintStart_toStartOf="@+id/SwitchDust"
+                app:layout_constraintTop_toBottomOf="@+id/SwitchDust" />
+
+
+            <Switch
+                android:id="@+id/SwitchAntiice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="Anti ice"
+                app:layout_constraintEnd_toEndOf="@+id/SwitchTank"
+                app:layout_constraintStart_toStartOf="@+id/SwitchTank"
+                app:layout_constraintTop_toBottomOf="@+id/SwitchTank" />
+
+            <Switch
+                android:id="@+id/SwitchHirss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Hirss"
+                app:layout_constraintStart_toEndOf="@+id/SwitchArmour"
+                app:layout_constraintTop_toTopOf="@+id/SwitchArmour"
+                tools:checked="true" />
+
+            <Switch
+                android:id="@+id/SwitchBambi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="Bambi"
+                app:layout_constraintEnd_toEndOf="@+id/SwitchHoist"
+                app:layout_constraintStart_toStartOf="@+id/SwitchHoist"
+                app:layout_constraintTop_toBottomOf="@+id/SwitchHoist" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBambi_Full"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Full Bucket"
+                app:layout_constraintBottom_toBottomOf="@+id/SwitchBambi"
+                app:layout_constraintStart_toEndOf="@+id/SwitchBambi"
+                app:layout_constraintTop_toTopOf="@+id/SwitchBambi" />
+
+            <View
+                android:id="@+id/view_weightcard2"
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/backgroundcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SwitchAntiice" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Total Gross Weight"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/SwitchDust"
+                app:layout_constraintTop_toBottomOf="@+id/view_weightcard2" />
+
+            <TextView
+                android:id="@+id/custom_weight_Textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="-"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>

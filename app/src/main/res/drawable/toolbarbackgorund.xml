@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    // The width and color of the border
+
+    <solid
+        android:color="@color/colorAccentkoyumavi"/>
+    <gradient
+        android:angle="0"
+        android:startColor="@color/colorAccentkoyumavi"
+        android:endColor="#63000000"
+        android:type="linear" />
+
+    // The desired corner radius. reduce it to keep it less rounded
+
+
+
+</shape>

@@ -1,0 +1,51 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccentturuncu</item>
+        <item name="android:colorBackground">@color/backgroundcolor</item>
+        <item name="android:navigationBarColor">@color/navigationbar</item>
+        <item name="materialCardViewStyle">@style/CardViewStyle</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textColorSecondary">@color/text_color_secondry</item>
+    </style>
+
+    <style name="CardViewStyle"  parent="CardView">
+        <item name="cardCornerRadius">@dimen/cardround</item>
+        <item name="cardBackgroundColor">@color/cardbackground</item>
+        <item name="android:layout_marginTop">@dimen/cardmargin</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+
+    <style name="MyTheme.ActionBar.TitleTextStyle"
+        parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorAccentacikmavi</item>
+    </style>
+
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccentacikmavi</item>
+
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="windowNoTitle">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/backgroundsplash</item>
+    </style>
+
+
+
+</resources>

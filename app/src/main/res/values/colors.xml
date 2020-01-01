@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#365DCB</color>
+    <color name="colorPrimaryDark">#223CAF</color>
+
+    <color name="colorAccentkoyumavi">#004CFF</color>
+    <color name="colorAccentturuncu">#DE3D3D</color>
+    <color name="colorAccentacikmavi">#42A5F5</color>
+
+    <color name="backgroundcolor">#224A69</color>
+    <color name="accent_material_dark_1">#990073</color>
+    <color name="navigationbar">#223CAF</color>
+
+    <color name="AccentOrange">#FF8800</color>
+    <color name="colorcardforeground2">#365DCB</color>
+    <color name="cardbackground">#A6365DCB</color>
+
+    <color name="text_color_primary">#FFFFFF</color>
+    <color name="text_color_secondry">#BED1E8</color>
+    <color name="text_Green">#00C853</color>
+    <color name="text_Red">#D50000</color>
+
+
+
+</resources>
+

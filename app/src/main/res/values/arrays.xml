@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="WindDirections">
+
+        <item>Head</item>
+        <item>Cross</item>
+        <item>Tail</item>
+
+    </string-array>
+
+
+</resources>
+
