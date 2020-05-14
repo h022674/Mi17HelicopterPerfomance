@@ -88,7 +88,6 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayout_Altitude_text"
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
@@ -105,7 +104,6 @@
                         android:ems="5"
                         android:inputType="number"
                         android:maxLength="5"
-
                         android:selectAllOnFocus="false"
                         android:singleLine="true"
                         android:textSize="14sp" />

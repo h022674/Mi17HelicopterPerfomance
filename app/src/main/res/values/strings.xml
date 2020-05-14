@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Mi-17 Helicopter Perfomance</string>
+    <string name="app_name">Mi-17 PPC</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
-    <string name="abouttext">This application is produced only for educational purposes. All provided information must be checked with legal data. This application can be used/distributed under MIT© license. \n\n Capt. Deniz DURHASAN - July 2019</string>
+    <string name="abouttext">This application is produced only for educational purposes. All provided information must be checked with legal data. This application can be used/distributed under MIT© license.</string>
 
 </resources>

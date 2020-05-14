@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1019033686798",
+    "firebase_url": "https://mi-17-helicopter-ppc-6f457.firebaseio.com",
+    "project_id": "mi-17-helicopter-ppc-6f457",
+    "storage_bucket": "mi-17-helicopter-ppc-6f457.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019033686798:android:c7abf935fdbcbbefe77d5f",
+        "android_client_info": {
+          "package_name": "com.ddcorp.mi_17helicopterperfomance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019033686798-mgr84aunhs2h595e4e43oteccophvj3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddcorp.mi_17helicopterperfomance",
+            "certificate_hash": "d9557d567e6de7b9ff1d58861f9d947534a81b82"
+          }
+        },
+        {
+          "client_id": "1019033686798-li0a0ktc8osfdb375tu4d7q65fjb11q7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz0p2HsaIn-MIpY_dcF5jZB3zISsQP3xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019033686798-li0a0ktc8osfdb375tu4d7q65fjb11q7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
