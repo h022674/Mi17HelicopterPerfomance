@@ -1,6 +1,9 @@
 package com.ddcorp.mi_17helicopterperformance;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
@@ -92,18 +96,53 @@ class fragment_weights_recyler extends RecyclerView.Adapter<fragment_weights_rec
         if (holder.getItemViewType() == card_1) {
             final card1_ViewHolder card = (card1_ViewHolder) holder;
 
-            View.OnClickListener onClickListener = new View.OnClickListener() {
+
+
+            card.operating_TextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    updater_custom_weights(card);
-                    hidesoftkeyboard(v);
-                    notifyDataSetChanged();
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus){
+                        card.checkBox.setChecked(false);
+                        hidesoftkeyboard(v);
+                        updater_custom_weights(card);
+
+                    }
                 }
-            };
-            card.operating_TextView.setOnClickListener(onClickListener);
-            card.crew_TextView.setOnClickListener(onClickListener);
-            card.fuel_TextView.setOnClickListener(onClickListener);
-            card.load_TextView.setOnClickListener(onClickListener);
+            });
+            card.crew_TextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus){
+                        card.checkBox2.setChecked(false);
+                        hidesoftkeyboard(v);
+                        updater_custom_weights(card);
+
+                    }
+                }
+
+            });
+            card.fuel_TextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus){
+                        card.checkBox3.setChecked(false);
+                        hidesoftkeyboard(v);
+                        updater_custom_weights(card);
+
+                    }
+                }
+            });
+            card.load_TextView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                   if (!hasFocus){
+                       hidesoftkeyboard(v);
+                       updater_custom_weights(card);
+
+                   }
+                }
+            });
+
 
             if (card.checkBox.isChecked()) {
                 card.operating_TextView.setText("7500");
@@ -112,10 +151,13 @@ class fragment_weights_recyler extends RecyclerView.Adapter<fragment_weights_rec
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (!isChecked) {
-                        card.operating_TextView.setText("");
+                        card.operating_TextView.setEnabled(true);
+                    }else   {
+                        card.operating_TextView.setText("7500");
+                        card.operating_TextView.setEnabled(false);
                     }
                     updater_custom_weights(card);
-                    notifyDataSetChanged();
+
                 }
             });
             if (card.checkBox2.isChecked()) {
@@ -125,10 +167,11 @@ class fragment_weights_recyler extends RecyclerView.Adapter<fragment_weights_rec
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (!isChecked) {
-                        card.fuel_TextView.setText("");
-                    }
+                        card.fuel_TextView.setEnabled(true);
+                    }else  {
+                        card.fuel_TextView.setText("2490");
+                        card.fuel_TextView.setEnabled(false);}
                     updater_custom_weights(card);
-                    notifyDataSetChanged();
 
                 }
             });
@@ -140,10 +183,15 @@ class fragment_weights_recyler extends RecyclerView.Adapter<fragment_weights_rec
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (!isChecked) {
-                        card.crew_TextView.setText("");
+                        card.crew_TextView.setEnabled(true);
+
+                    }else
+                    {
+                        card.crew_TextView.setText("400");
+                        card.crew_TextView.setEnabled(false);
                     }
                     updater_custom_weights(card);
-                    notifyDataSetChanged();
+
 
 
                 }
@@ -234,15 +282,19 @@ class fragment_weights_recyler extends RecyclerView.Adapter<fragment_weights_rec
 
         card.GW_TextView.setText(GW.toString());
         grossWeight_listener.GrossWeght_listener(GW);
+
     }
 
     private void updater_custom_weights(card1_ViewHolder card) {
+
+
         operating = Textview_to_integer(card.operating_TextView.getText().toString());
         crew = Textview_to_integer(card.crew_TextView.getText().toString());
         fuel = (int) (0.79 * Textview_to_integer(card.fuel_TextView.getText().toString()));
         card.textInputLayout_fuel.setHint("Lt. (" + fuel.toString() + " Kg. JP8)");
         load = Textview_to_integer(card.load_TextView.getText().toString());
         custom_weights = operating + crew + fuel + load;
+        card.custom_weight_Textview.setText(custom_weights.toString() + " Kg.");
         update_GW(card0);
 
 

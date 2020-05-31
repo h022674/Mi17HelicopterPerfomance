@@ -1,6 +1,8 @@
 package com.ddcorp.mi_17helicopterperformance;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity implements fragment_cruise.send_fuelconsumption,fragment_weights.sendGW,fragment_startcard.send_env_cond,fragment_takeoff.send_env_cond {
-    public static final String LAST_VERSION = "LAST_VERSION";
+    public static String LAST_VERSION = "LAST_VERSION";
     public static final String TAG = "Main Activity";
     private DatabaseAccess databaseAccess;
     ViewPager viewPager;
@@ -29,8 +31,17 @@ public class MainActivity extends AppCompatActivity implements fragment_cruise.s
         switch (item.getItemId()) {
             case R.id.info:
                 // setup the alert builder
+                try {
+                    PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                    LAST_VERSION = pInfo.versionName;
+
+
+                } catch(PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.AlertDialogTheme);
-                builder.setTitle("About");
+                builder.setTitle("About ("+LAST_VERSION+")");
                 builder.setMessage(R.string.abouttext);
 
                 // add a button

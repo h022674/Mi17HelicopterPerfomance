@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Conting. Power (K) 2.5 MIN."
+                        android:text="Conting. Power 2.5 MIN."
                         android:textAlignment="textStart"
                         android:textColor="@color/colorAccentacikmavi" />
 
@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Take off Power (O) 30 MIN."
+                        android:text="Take off Power 30 MIN."
                         android:textAlignment="textStart"
                         android:textColor="@color/colorAccentacikmavi" />
 
@@ -207,7 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Nominal Power (H) 60 MIN."
+                        android:text="Nominal Power 60 MIN."
                         android:textAlignment="textStart"
                         android:textColor="@color/colorAccentacikmavi" />
 

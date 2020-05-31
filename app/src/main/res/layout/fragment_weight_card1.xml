@@ -96,12 +96,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="5"
+                            android:enabled="false"
+
+
                             android:inputType="number"
                             android:maxLength="5"
-
                             android:selectAllOnFocus="false"
                             android:singleLine="true"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:imeOptions="actionSend"
+                            android:cursorVisible="false"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,12 +146,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="5"
+                            android:enabled="false"
+
+
                             android:inputType="number"
                             android:maxLength="5"
-
                             android:selectAllOnFocus="false"
                             android:singleLine="true"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:imeOptions="actionSend"
+                            android:cursorVisible="false"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,12 +198,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="5"
+                            android:enabled="false"
+
+
                             android:inputType="number"
                             android:maxLength="5"
-
                             android:selectAllOnFocus="false"
                             android:singleLine="true"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:imeOptions="actionSend"
+                            android:cursorVisible="false"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -236,10 +248,13 @@
                             android:id="@+id/loadtext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:cursorVisible="false"
                             android:ems="5"
+
+
+                            android:imeOptions="actionSend"
                             android:inputType="number"
                             android:maxLength="5"
-
                             android:selectAllOnFocus="false"
                             android:singleLine="true"
                             android:textSize="14sp" />
