@@ -214,7 +214,7 @@ class fragment_starts_recyler extends RecyclerView.Adapter<fragment_starts_recyl
                 card2_start.textView_caption_startcard.setEnabled(true);
 
                 //=((altitude_meter*0,0046)*-1)+(1,97-((fat^1,007)/6200))
-                card2_start.apuairpress = ((fat * 0.0046) * -1) + (1.97 - (Math.pow(altitude_meter, 1.007) / 6200));
+               // card2_start.apuairpress = ((fat * 0.0046) * -1) + (1.97 - (Math.pow(altitude_meter, 1.007) / 6200));
                 card2_start.apuairpress = databaseAccess.get_apu_press(altitude_meter,fat);
                 if (fat <= 13) {
                     card2_start.maxtit = (fat * 2.5) + 750;

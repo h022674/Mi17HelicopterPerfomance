@@ -35,7 +35,7 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
     public boolean takeoff_usemsec;
 
     DatabaseAccess databaseAccess;
-    Integer ftime=150;
+    Integer ftime = 150;
     Context context;
     Integer arrival_alt = 0, arrival_fat = 0;
     Integer arrival_alt_meter = 0;
@@ -46,7 +46,7 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
     private int card_2 = 3;
     private Integer arrival_wind_msec;
     private Integer arrival_wind;
-    private boolean noentry=true;
+    private boolean noentry = true;
     card0_arrival_ViewHolder card;
     boolean takeoff_usemeter;
     private boolean usemsec;
@@ -56,7 +56,6 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
     public fragment_arrival_recyler(Context context) {
         this.context = context;
         databaseAccess = DatabaseAccess.getInstance(context);
-
 
 
     }
@@ -114,8 +113,8 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
                 @Override
                 public void onClick(View v) {
                     if (!card.arrival_altitude_TextView.getText().toString().isEmpty() && !card.arrival_fat_TextView.getText().toString().isEmpty()) {
-                        noentry=false;
-                    }else noentry=true;
+                        noentry = false;
+                    } else noentry = true;
                     hidesoftkeyboard(v);
                     card.checkBox_copyfromtakeoff.setChecked(false);
                     notifyDataSetChanged();
@@ -177,7 +176,7 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
                         }
 
                     } else {
-                         arrival_wind = (int) (Math.round(Double.valueOf(arrival_wind_msec) * 1.94384449412));
+                        arrival_wind = (int) (Math.round(Double.valueOf(arrival_wind_msec) * 1.94384449412));
                         card.textInputLayout_arrival_wind.setHint("Wind (Kt.)");
                         if (!card.arrival_wind_TextView.getText().toString().isEmpty() && arrival_wind > 0) {
                             card.arrival_wind_TextView.setText(arrival_wind.toString());
@@ -201,13 +200,13 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
 
                 }
             });
-           card.arrival_Spinner_Wind_Direction.setOnTouchListener(new View.OnTouchListener() {
-               @Override
-               public boolean onTouch(View v, MotionEvent event) {
-                   card.checkBox_copyfromtakeoff.setChecked(false);
-                   return false;
-               }
-           });
+            card.arrival_Spinner_Wind_Direction.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    card.checkBox_copyfromtakeoff.setChecked(false);
+                    return false;
+                }
+            });
 
 
             arrival_fat = Textview_to_integer(card.arrival_fat_TextView.getText().toString());
@@ -215,9 +214,9 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
             card.checkBox_copyfromtakeoff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked ) {
+                    if (isChecked) {
                         //copyfromtakeoff();
-                        noentry=false;
+                        noentry = false;
                         notifyDataSetChanged();
                     }
 
@@ -240,9 +239,8 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
                 card.textViewOGEtable.setText(card.OGETable.toString());
 
 
-
-                card.IgeTotal = card.IGEtable + card.IGEWind- dustprotect - antiice - hirss;
-                card.OgeTotal = card.OGETable + card.OGEWind- dustprotect - antiice - hirss;
+                card.IgeTotal = card.IGEtable + card.IGEWind - dustprotect - antiice - hirss;
+                card.OgeTotal = card.OGETable + card.OGEWind - dustprotect - antiice - hirss;
                 if (card.IgeTotal > 13000) {
                     card.IgeTotal = 13000;
                 }
@@ -303,21 +301,21 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
                 public void onClick(View v) {
                     hidesoftkeyboard(v);
                     if (!card.editText_ftime.getText().toString().isEmpty()) {
-                        if (card.editText_ftime.getText().toString().length() ==5) {
-                            String s= card.editText_ftime.getText().toString().substring(2,3);
-                            if (s.compareTo(":")!= 0) {
+                        if (card.editText_ftime.getText().toString().length() == 5) {
+                            String s = card.editText_ftime.getText().toString().substring(2, 3);
+                            if (s.compareTo(":") != 0) {
                                 card.editText_ftime.setText("");
-                                Toast.makeText(context,"invalid input!",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "invalid input!", Toast.LENGTH_SHORT).show();
 
-                            }else {
+                            } else {
                                 ftime = getIntegerformat(card.editText_ftime.getText().toString());
                                 if (ftime > 0) {
                                     updatefuelfield(card);
                                 }
                             }
-                        }else {
+                        } else {
                             card.editText_ftime.setText("");
-                            Toast.makeText(context,"invalid input!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "invalid input!", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -329,62 +327,65 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
 
         }
     }
+
     public boolean copyfromtakeoff() {
         if (card != null) {
             if (card.checkBox_copyfromtakeoff.isChecked()) {
-                arrival_fat=takeoff_fat;
+                arrival_fat = takeoff_fat;
                 card.arrival_fat_TextView.setText(String.valueOf(arrival_fat));
 
-                arrival_alt=takeoff_alt;
-                arrival_alt_meter=(int) (Math.round(Double.valueOf(takeoff_alt) * 0.3048));
+                arrival_alt = takeoff_alt;
+                arrival_alt_meter = (int) (Math.round(Double.valueOf(takeoff_alt) * 0.3048));
                 if (takeoff_usemeter) {
                     card.arrival_altitude_TextView.setText(arrival_alt_meter.toString());
-                }else card.arrival_altitude_TextView.setText(arrival_alt.toString());
-                usemeter=takeoff_usemeter;
+                } else card.arrival_altitude_TextView.setText(arrival_alt.toString());
+                usemeter = takeoff_usemeter;
                 card.arrival_Checkbox_useMeter.setChecked(takeoff_usemeter);
 
-                arrival_wind=takeoff_wind_kt;
-                arrival_wind_msec=(int) (Math.round(Double.valueOf(takeoff_wind_kt) * 0.514444444));
+                arrival_wind = takeoff_wind_kt;
+                arrival_wind_msec = (int) (Math.round(Double.valueOf(takeoff_wind_kt) * 0.514444444));
                 if (takeoff_usemsec) {
-                   card.arrival_wind_TextView.setText(arrival_wind_msec.toString());
-                }else card.arrival_wind_TextView.setText(arrival_wind.toString());
+                    card.arrival_wind_TextView.setText(arrival_wind_msec.toString());
+                } else card.arrival_wind_TextView.setText(arrival_wind.toString());
 
-                usemsec= takeoff_usemsec;
+                usemsec = takeoff_usemsec;
                 card.arrival_Checkbox_useMSec.setChecked(takeoff_usemsec);
 
-                wind_direction=card.arrival_Spinner_Wind_Direction.getItemAtPosition(takeoff_wind_direction_position).toString();
+                wind_direction = card.arrival_Spinner_Wind_Direction.getItemAtPosition(takeoff_wind_direction_position).toString();
                 card.arrival_Spinner_Wind_Direction.setSelection(takeoff_wind_direction_position);
-            return true;
+                return true;
             } else return false;
 
-        }else return false;
+        } else return false;
 
     }
 
 
     private void updatefuelfield(card_equipment_ViewHolder card) {
         card.textView_ftimemin.setText(" (" + ftime.toString() + " min.)");
-        if ( GW > 0) {
-            card.textView_takeoff_GW.setText(String.valueOf(GW)+" kg.");
+        if (GW > 0) {
+            card.textView_takeoff_GW.setText(String.valueOf(GW) + " kg.");
             double fuelconsump_lt;
             double totalfuelconsump;
             if (fuelconsumption > 0) {
-                card.textView_consumption.setTextColor(context.getResources().getColor(R.color.text_Green));;
+                card.textView_consumption.setTextColor(context.getResources().getColor(R.color.text_Green));
+                ;
                 fuelconsump_lt = fuelconsumption * 0.79;
                 card.textView_fuel.setText("(~" + String.valueOf(Math.round(fuelconsump_lt)) + " kg/hr.)");
                 totalfuelconsump = (fuelconsump_lt / 60 * ftime);
                 card.textView_consumption.setText(String.valueOf(Math.round(totalfuelconsump)) + " kg.");
 
             } else {
-                totalfuelconsump=0;
+                totalfuelconsump = 0;
                 card.textView_consumption.setText("no cruise data!");
-                card.textView_consumption.setTextColor(context.getResources().getColor(R.color.text_Red));;
+                card.textView_consumption.setTextColor(context.getResources().getColor(R.color.text_Red));
+                ;
             }
 
-                card.total_equip_load = dustprotect + hirss + antiice;
-                card.Total_load_Textview.setText(String.valueOf(card.total_equip_load)+ " kg.");
-                card.landing_GW = GW - (int) Math.round(totalfuelconsump)+card.total_equip_load;
-                card.textView_landing_GW.setText(String.valueOf(card.landing_GW) + " kg.");
+            card.total_equip_load = dustprotect + hirss + antiice;
+            card.Total_load_Textview.setText(String.valueOf(card.total_equip_load) + " kg.");
+            card.landing_GW = GW - (int) Math.round(totalfuelconsump) + card.total_equip_load;
+            card.textView_landing_GW.setText(String.valueOf(card.landing_GW) + " kg.");
 
 
         }
@@ -453,6 +454,7 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
         hirss = Switch_to_integer(card.Switch_hirss.isChecked(), 300);
         antiice = Switch_to_integer(card.Switch_antiice.isChecked(), 800);
         updatefuelfield(card);
+
        /*
         static_weights = hoist + antiice + internaltank + bambibucket + armour + hirss + dustprotect;
         card.static_weight_Textview.setText(static_weights.toString() + " Kg.");
@@ -495,16 +497,11 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
     public class card0_arrival_ViewHolder extends ViewHolder {
 
 
-
-
-
-
         TextView
 
                 arrival_altitude_TextView,
                 arrival_fat_TextView,
-                arrival_wind_TextView
-               ;
+                arrival_wind_TextView;
         CheckBox checkBox_copyfromtakeoff;
 
         CheckBox arrival_Checkbox_useMeter, arrival_Checkbox_useMSec;
@@ -539,7 +536,6 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
         public int OgeTotal;
         public Integer IGEtable = 0;
         public Integer OGETable = 0;
-
 
 
         TextView
@@ -607,14 +603,13 @@ class fragment_arrival_recyler extends RecyclerView.Adapter<fragment_arrival_rec
                 Switch_antiice;
 
 
-
         TextView
-        Total_load_Textview,
-        textView_fuel,
-        textView_landing_GW,
-        textView_takeoff_GW,
-        textView_consumption,
-        textView_ftimemin;
+                Total_load_Textview,
+                textView_fuel,
+                textView_landing_GW,
+                textView_takeoff_GW,
+                textView_consumption,
+                textView_ftimemin;
 
         EditText editText_ftime;
 
